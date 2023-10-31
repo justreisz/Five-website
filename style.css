@@ -1,0 +1,180 @@
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat, Arial, sans-serif;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    background-color: grey;
+    height: 100px;
+}
+
+.topnav a {
+    color: white;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+    position: relative;
+}
+
+.topnav a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-out;
+}
+  
+.topnav a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+.divLogin {
+    position: absolute;
+    vertical-align: middle;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 60%;
+    min-height: 400px;
+    max-height: 450px;
+    border-radius: 55px;
+    box-shadow: 15px 15px 46px 0px grey;
+    transition: 1s ease-in-out;
+}
+
+.divLogin:hover{
+    transition: 1s ease-in-out;
+    width: 50%;
+    height: 65%;
+    align-items: center;
+    vertical-align: middle;
+    box-shadow:15px 15px 46px 5px black;
+}
+
+.formLogin h1{
+    color: black;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.formLogin {
+    padding: 20px;
+    margin-top: 4%;
+    text-align: center;
+}
+
+.formLogin input {
+    text-align: center;
+    border-radius: 10px;
+}
+
+#btn{
+    margin-top: 40px;
+    border-color: gray;
+    font-family:'Century Gothic';
+    font-size: 20px;
+    width: 20%;
+    height: 25%;
+    margin-top: 2%;
+    background-color: rgb(190, 190, 190);
+    color: black;
+    border-radius: 10px;
+    transition: 0.6s ease-in-out;
+}
+
+#btn:hover{
+    margin-bottom: 10px;
+    transition: 0.6s ease-in-out;
+    font-size: 27px;
+    width: 27%;
+    height: 32%;
+    box-shadow:1px 1px 16px 1px black;
+}
+
+.bgImage img{
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.home_halteres{
+    background-color: white;
+    opacity: 85%;
+    left: 10%;
+    top: 40%;
+    position: absolute;
+    width: 35%;
+    height: 95%;
+    max-height: 600px;
+    border-radius: 20px;
+    scale: 1; 
+}
+
+.home_halteres img{
+    transition: 0.6s ease-in-out;
+}
+
+.home_halteres img:hover{   
+    transition: 0.6s ease-in-out;
+    transform: scale(1.1);
+}
+
+.home_halteres h1{
+    font-size: 40px;
+    margin-top: 12%;
+    text-align: center;
+}
+
+.home_discos{
+    background-color: white;
+    opacity: 85%;
+    left: 55%;
+    top: 40%;
+    position: absolute;
+    width: 35%;
+    height: 95%;
+    max-height: 600px;
+    border-radius: 20px;
+    scale: 1;
+}
+
+.home_discos img{
+    transition: 0.6s ease-in-out;
+}
+
+.home_discos img:hover{   
+    transition: 0.6s ease-in-out;
+    transform: scale(1.1);
+}
+
+.home_discos h1{
+    font-size: 40px;
+    margin-top: 12%;
+    text-align: center;
+}
+
+.footer_menu {
+    text-align: left;
+    padding: 25px 30px 90px;
+    background-color: grey;
+    color: white;
+}
+
+body{
+    margin: 0;
+}
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

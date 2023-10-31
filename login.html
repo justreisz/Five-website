@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <iframe src="menu.html" width="100%" height="100%" frameborder="0"></iframe>
+    <div class="divLogin">
+        <form name="login" class="formLogin">
+            <h1>LOGIN</h1>
+            <h3>Utilizador: <input type="text" name="user" autocomplete="off" required></h3>
+            <h3>Email: <input type="email" name="mail" autocomplete="off" required></h3>
+            <h3>Password: <input type="password" name="pass" autocomplete="off" required></h3>
+            <h3>Reintroduzir password: <input type="password" name="pass2" autocomplete="off" required></h3>
+            <input type="reset" value="Limpar" id="btn">
+            <input type="submit" value="Confirmar" id="btn" onclick="verificarPassword()">
+        </form> 
+    </div> 
+    
+</body>
+</html>
