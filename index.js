@@ -9,3 +9,8 @@ function verificarPassword() {
         login.pass.focus();
     }
 }
+
+/* Smooth scroll */
+var scroll = new SmoothScroll('.topnav a[href*="#"]', {
+	speed: 500
+});
