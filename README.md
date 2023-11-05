@@ -1,2 +1,2 @@
 # Five-website
-My first new website that is a website where you can buy your gym equipments.
+My first new website where you can buy your gym equipments.
