@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Five</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+    <script lang="javascript">
+        localStorage.setItem('isVerified', false);
+    </script>
 </head>
 <body> 
     <iframe src="menu.html" width="100%" height="100px" frameborder="0"></iframe>
@@ -13,19 +15,38 @@
         <img src="img/backgroundPicture.jpg">   
         <div class="home_halteres">
             <h1>Halteres</h1>
-            <h2><a href="catalogo.html">Ver mais</a><h2>
+            <h2><a href="catalogo.html#container-halteres" style="color: black;">Ver mais</a><h2>
             <div class="grid">
                 <img src="img/halteres.png">
             </div>
         </div>
         <div class="home_discos">
             <h1>Discos</h1>
-            <h2><a href="catalogo.html">Ver mais</a><h2>
+            <h2><a href="catalogo.html#container-discos" style="color: black;">Ver mais</a><h2>
             <div class="grid">
                 <img src="img/discos.png">
             </div>
         </div>
     </div>
+    <section class="sobre" id="sobre">
+        <div class="sobre_conteudo">
+            <h2>Five</h2>
+            <p>Bem-vindo ao Five - O Seu Destino Para Equipamentos de Ginásio de Primeira Qualidade!<br>
+            No Five, acreditamos que uma vida ativa e saudável é o alicerce para uma vida plena. É por isso que nos dedicamos a
+            fornecer os melhores equipamentos de ginásio para te ajudar a alcançar os seus objetivos de fitness e bem-estar. Somos
+            mais do que uma loja, somos o seu parceiro de confiança na jornada para uma versão mais forte e saudável de você.</p>
+            <br>
+            <ol>
+                <li><b>Seleção Premium</b>: Oferecemos uma seleção cuidadosamente curada de equipamentos de ginásio de alta qualidade, desde máquinas de cardio até pesos livres e acessórios, escolhidos para atender a todas as suas necessidades de treinamento.</li>
+                <br>
+                <li><b>Atendimento ao Cliente Excepcional</b>: Nossa equipe dedicada e experiente está pronta para ajudar a encontrar os equipamentos certos para você. Estamos aqui para responder às suas perguntas e fornecer orientações personalizadas.</li>
+                <br>
+                <li><b>Qualidade Garantida</b>: Comprometemo-nos a fornecer produtos de qualidade que são duráveis e eficazes, para que você possa treinar com confiança e foco.</li>
+                <br>
+                <li><b>Preços Competitivos</b>: Oferecemos preços acessíveis para garantir que o caminho para a saúde e a boa forma esteja ao alcance de todos.</li>
+            </ol>
+        </div>
+    </section>
     <iframe src="footer.html" width="100%" height="255" frameborder="0"></iframe>
 </body>
 </html>
