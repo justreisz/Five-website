@@ -34,14 +34,32 @@ function verificarPassword() {
     return false; 
 }
 
-function inserirProduto(){
-    var newProductName =inserir_produto.nome.value;
+function inserirProduto() {
+    var newProductName = inserir_produto.nome.value;
     var newProductPrice = inserir_produto.preco.value;
-    var newProductImage = inserir_produto.imagem.value;
-    localStorage.setItem("newProductName",newProductName);
-    localStorage.setItem("newProductPrice",newProductPrice);   
-    localStorage.setItem("newProductImage",newProductImage);  
+    var newProductImage = '/img/default-product-image.png';
+
+
+    var productList = JSON.parse(localStorage.getItem('productList'));
+    if (!productList) {
+        productList = [];
+    }
+
+    // Lista de produtos
+    productList.push({
+        name: newProductName,
+        price: newProductPrice,
+        image: newProductImage,
+    });
+
+    localStorage.setItem('productList', JSON.stringify(productList));
+
+    alert("Produto adicionado com sucesso! ");
 }
+
+//Limpar a variavel localStorage
+//localStorage.removeItem('productList');
+
 
 let cartIcon = document.querySelector('#cart-icon');
 let cart = document.querySelector('.cart-menu');
@@ -87,26 +105,29 @@ function ready(){
         button.addEventListener('click',addCartClicked);
     }
 
-    var newProductName = localStorage.getItem('newProductName');
-    var newProductPrice = localStorage.getItem('newProductPrice');
-    var newProductImage = localStorage.getItem('newProductImage');
-    if (newProductImage.includes("C")){
-        newProductImage = '/img/default-product-image.png';
+
+    var productList = JSON.parse(localStorage.getItem('productList'));
+    if (!productList) {
+        productList = [];
     }
-    var newItemsBox = document.createElement('div');
-    newItemsBox.classList.add('newItems-box');
     var newItems = document.getElementsByClassName('newItems-content')[0];
+    newItems.innerHTML = '';
 
-    var newItemsBoxContent = `
-                    <div class="box">
-                        <img class="product-img" src="${newProductImage}">
-                        <h4 class="product-title">${newProductName}</h4>
-                        <h5 class="product-price">${newProductPrice}$</h5>
-                        <i class='bx bx-shopping-bag add-cart'></i>
-                    </div>`;
+    productList.forEach(function(product) {
+        var newItemsBox = document.createElement('div');
+        newItemsBox.classList.add('newItems-box');
 
-    newItemsBox.innerHTML = newItemsBoxContent;
-    newItems.append(newItemsBox);
+        var newItemsBoxContent = `
+            <div class="box">
+                <img class="product-img" src="${product.image}">
+                <h4 class="product-title">${product.name}</h4>
+                <h5 class="product-price">${product.price}$</h5>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>`;
+
+        newItemsBox.innerHTML = newItemsBoxContent;
+        newItems.append(newItemsBox);
+    });
 
     document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
 
