@@ -90,7 +90,6 @@ function ready(){
     var newProductName = localStorage.getItem('newProductName');
     var newProductPrice = localStorage.getItem('newProductPrice');
     var newProductImage = localStorage.getItem('newProductImage');
-    alert(newProductImage);
     if (newProductImage.includes("C")){
         newProductImage = '/img/default-product-image.png';
     }
