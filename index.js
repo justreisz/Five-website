@@ -48,9 +48,6 @@ if(document.readyState == 'loading'){
 
 
 function ready(){
-
-    var sessionValue = document.getElementById('sessionValue');
-    alert(sessionValue);
     document.getElementsByClassName('quantity')[0].innerText = 0;
 
     //Remover itens do carrinho
@@ -102,22 +99,14 @@ function ready(){
 }
 
 function buyButtonClicked() {
-    var sessionValue = document.getElementById('sessionValue');
-    alert(sessionValue);
-    if (sessionValue){
-        alert('A tua da foi realizada');
-        var cartContent = document.getElementsByClassName('cart-content')[0];
-        while (cartContent.hasChildNodes()) {
-        cartContent.removeChild(cartContent.firstChild);
-        }
-        updateTotal();
-        document.getElementsByClassName('quantity')[0].innerText = 0;
+    alert('A tua encomenda foi realizada com sucesso!!');
+    var cartContent = document.getElementsByClassName('cart-content')[0];
+    while (cartContent.hasChildNodes()) {
+    cartContent.removeChild(cartContent.firstChild);
     }
-    else {
-       alert('Dá login primeiro antes de proceder'); 
-    }
+    updateTotal();
+    document.getElementsByClassName('quantity')[0].innerText = 0;
 }
-
   
 
 //Remover itens do carrinho

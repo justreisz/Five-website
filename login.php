@@ -31,7 +31,7 @@ function verificarPassword() {
             exit();
         } else {
             $_SESSION['user'] = $utilizador;
-            header("Location: catalogo.html");
+            header("Location: catalogo.php");
             exit();
         }
     }
@@ -53,7 +53,7 @@ verificarPassword();
 
 </head>
 <body style="overflow: hidden;">
-    <iframe src="menu.html" width="100%" height="100%" frameborder="0"></iframe>
+    <iframe src="menu.php" width="100%" height="100%" frameborder="0"></iframe>
     
     <div class="login-container">
         <div class="divLogin">
@@ -77,7 +77,6 @@ verificarPassword();
                         <th><input type="password" name="pass2" autocomplete="off" required></h3></th>
                     </tr>
                 </table>
-                <input type="hidden" id="sessionValue" value="<?php echo isset($_SESSION['user']) ? $_SESSION['user'] : ''; ?>">
                 <h4 id="erro" class="erro"><?php echo $error_message; ?></h4>
                 <input type="reset" value="Limpar" class="btn">
                 <input type="submit" value="Confirmar" class="btn">

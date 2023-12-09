@@ -644,6 +644,30 @@ section h1{
     text-align: center;
 }
 
+/* Página erro */
+
+.body-erro {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 50px;
+}
+
+.erro-mensagem{
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.login-link {
+    color: #155724;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /* Responsive */
 
 @media (max-width: 1350px) {
