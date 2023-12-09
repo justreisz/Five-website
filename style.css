@@ -317,6 +317,7 @@ section h1{
     position: relative;
     transition: all .35s ease;
     scale: 1;
+    max-width: 240px;
 }
 
 .box:hover {

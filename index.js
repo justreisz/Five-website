@@ -1,39 +1,3 @@
-function verificarPassword() {
-    var pass1 = login.pass.value;
-    var pass2 = login.pass2.value;
-    var utilizador = login.user.value;
-    var mail = login.mail.value;
-
-    if (utilizador == "" || pass1 == "" || mail == "" || pass2 == "") {
-        document.getElementById("erro").textContent = "*Preencha todos os campos";
-        return false;
-    } else if (!mail.includes("@gmail.com")) {
-        document.getElementById("erro").textContent = "*Insira um email válido";
-        login.mail.focus();
-        return false;
-    } else if (pass1.length < 6) {
-        document.getElementById("erro").textContent = "*A password tem de ter pelo menos 6 caracteres";
-        login.pass.focus();
-        return false;
-    } else if (pass1 != pass2) {
-        document.getElementById("erro").textContent = "*Introduza corretamente as passwords";
-        login.pass.focus();
-        return false;
-    }
-
-    if (utilizador == "admin" && mail == "admin@gmail.com" && pass1 == "admin123" && pass2 == "admin123"){
-        window.location.assign("admin.html");
-    } else{
-        localStorage.setItem('isVerified', true);
-        document.getElementById("erro").textContent = "Bem-vindo ao five " + utilizador;
-        window.location.assign("catalogo.html");
-        return false;
-    }
-    
-
-    return false; 
-}
-
 function inserirProduto() {
     var newProductName = inserir_produto.nome.value;
     var newProductPrice = inserir_produto.preco.value;
@@ -81,7 +45,12 @@ if(document.readyState == 'loading'){
     ready();
 }
 
+
+
 function ready(){
+
+    var sessionValue = document.getElementById('sessionValue');
+    alert(sessionValue);
     document.getElementsByClassName('quantity')[0].innerText = 0;
 
     //Remover itens do carrinho
@@ -130,25 +99,26 @@ function ready(){
     });
 
     document.getElementsByClassName('btn-buy')[0].addEventListener('click', buyButtonClicked);
-
 }
 
 function buyButtonClicked() {
-    var storedIsVerified = localStorage.getItem('isVerified');
-    if (storedIsVerified === "true") {
-      alert('A tua encomenda foi realizada');
-      var cartContent = document.getElementsByClassName('cart-content')[0];
-      while (cartContent.hasChildNodes()) {
+    var sessionValue = document.getElementById('sessionValue');
+    alert(sessionValue);
+    if (sessionValue){
+        alert('A tua da foi realizada');
+        var cartContent = document.getElementsByClassName('cart-content')[0];
+        while (cartContent.hasChildNodes()) {
         cartContent.removeChild(cartContent.firstChild);
-      }
-      updateTotal();
-      document.getElementsByClassName('quantity')[0].innerText = 0;
-    } else {
-      alert('Dá login primeiro antes de proceder');
+        }
+        updateTotal();
+        document.getElementsByClassName('quantity')[0].innerText = 0;
     }
-  }
-  
+    else {
+       alert('Dá login primeiro antes de proceder'); 
+    }
+}
 
+  
 
 //Remover itens do carrinho
 function removeCartItem(event){
